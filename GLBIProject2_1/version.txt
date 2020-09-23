@@ -1,0 +1,8 @@
+新版本！texture版本开档！
+
+删除所有无关注释，如需要注释提示，可以参看GLBIproject1.GLBIProject1_4或1_5版本。
+使用stb_image.h库文件
+
+更新GLBIshader的版本。
+再次梳理OpenGL中的数据流动，同时一并梳理依赖于数据流动的 数据操作顺序
+
