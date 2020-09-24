@@ -5,7 +5,7 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-//库文件只是一个头文件，stb_image.h，如要使用此头文件，必须以此格式在前添加宏 STB_IMAGE_IMPLEMENTATION
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -157,17 +157,14 @@ int hellowindow(){
 			GL_UNSIGNED_BYTE, 	//源图的数据类型
 			data);				//源图数据（指针）
 
-		glGenerateMipmap(GL_TEXTURE_2D);//为该栏位的纹理创建全部级别的多级渐远纹理。
-		//或者反复调用上面的glTexImage2D也可以手动创建每一级渐远纹理，
-		//只要调整第二个参数就可以生成不同级别的多级渐远纹理
-		//基本级别“0”就是不创建多级渐远纹理,仅使用原始贴图
+		glGenerateMipmap(GL_TEXTURE_2D);
 
 
-	}else{//如果加载成功，则data内至少是有值的。
+	}else{
 		std::cerr << "stb_texture_load_null" << std::endl;
 	}
 	stbi_image_free(data);
-	//OpenGL根据源图生成纹理后，源图就不需要了。
+
 
 
 	
