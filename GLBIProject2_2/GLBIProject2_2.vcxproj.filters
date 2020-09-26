@@ -26,6 +26,7 @@
     <None Include="shader\OpenGLPersetVertexShader(simple).gls">
       <Filter>shader</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="texture\Angel.jpg">

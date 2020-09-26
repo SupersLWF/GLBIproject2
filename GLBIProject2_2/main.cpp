@@ -1,5 +1,11 @@
 #include<glew.h>
 #include<glfw3.h>
+
+#include <glm.hpp>
+#include <gtc/matrix_transform.hpp>
+#include <gtc/type_ptr.hpp>
+//GLM类库的大多数函数的包含文件
+
 #include<iostream>
 #include"GLBIshader.h"
 
@@ -165,9 +171,11 @@ int hellowindow(){
 	}
 	stbi_image_free(data);
 
+	//glm::mat4 temp = glm::mat4(1.0f);
 
-
-	
+	//temp = glm::translate(temp, glm::vec3(1.0f, 1.0f, 0.0f)); 
+	//temp = glm::rotate(temp, glm::radians(90.0f), glm::vec3(0.0/*x*/, 0.0/*y*/, 1.0/*z*/)); 
+	//temp = glm::scale(temp, glm::vec3(0.5, 0.5, 0.5)); 
 
 
 	while (!glfwWindowShouldClose(window)) {

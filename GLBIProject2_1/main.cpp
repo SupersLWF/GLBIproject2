@@ -102,13 +102,14 @@ int hellowindow(){
 	GLuint texture1,texture2;
 
 
-	//为ID分配空间，激活指定栏位(单一材质时默认使用0号栏位)，将ID指定的材质空间与GL_TEXTURE_2D标签绑定。
+	//为ID分配空间，激活一个栏位(单一材质时默认使用0号材质栏位)，将ID指定的材质空间与GL_TEXTURE_2D标签绑定。
 	glGenTextures(1, &texture1);
 	glActiveTexture(GL_TEXTURE0);
+	//栏位激活后，先行绑定的纹理ID，会使用当前激活的栏位
 	glBindTexture(GL_TEXTURE_2D, texture1);
 
 
-	//设置当前绑定的纹理ID的环绕方式，以及过滤方式，单次绘制仅需设置一次
+	//设置当前与GL_TEXTURE_2D绑定的纹理ID的环绕方式，以及过滤方式，单次绘制仅需设置一次
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -136,7 +137,10 @@ int hellowindow(){
 
 
 	glGenTextures(1, &texture2);
-	glActiveTexture(GL_TEXTURE1);
+	glActiveTexture(GL_TEXTURE1); //可以通过GL_TEXTURE0 + 8的方式获得GL_TEXTURE8
+
+
+
 	glBindTexture(GL_TEXTURE_2D, texture2);//将id = texture的存储空间与GL_TEXTURE_2D标签绑定，并使用序号较小的槽位存放该材质。
 										  //一会向GL_TEXTURE_2D汇入纹理时，就会直接存入id = texture的texture类型存储空间。
 

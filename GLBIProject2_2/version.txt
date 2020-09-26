@@ -4,3 +4,6 @@
 
 继承shader源文件
 删除shader源文件中的冗余注释
+
+更改GLBIshader类，其中，使用宏定义的添加的内容是今后预计要分离封装的部分
+uniform_settings添加新的填充功能
