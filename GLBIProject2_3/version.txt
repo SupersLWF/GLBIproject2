@@ -1,0 +1,12 @@
+继承GLBIProject2_2
+
+继承shader源文件
+删除了TransMartex，
+启用了modelcoord，viewcoord，projcoord，用于三维空间变换;
+
+原2d变换集成在了modelcoord创建过程中，详见GLBIshader.h line23-27
+
+更改GLBIshader类，
+暂时删除宏定义的部分（方便调试）
+
+uniform_settings添加新的填充功能，将modelcoord，viewcoord，projcoord发送到vertexshader中。

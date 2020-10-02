@@ -8,7 +8,7 @@ out vec2 uv;
 uniform mat4 TransMatex;
 
 void main(){
-gl_Position = TransMatex * vec4(aPos,1.0);
+gl_Position = TransMatex*vec4(aPos.x,aPos.y,aPos.z,1.0);
 Color = color;
 uv = vec2(UV.x,UV.y);//注意，一定不要忘了把uv传到fragmentshader
 }

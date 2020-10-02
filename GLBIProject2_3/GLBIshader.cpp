@@ -5,18 +5,9 @@
 #define MaxShaderSize 2000
 #define MaxLogSize 512
 
-//void GLBIshader::glmvarInit()
-//{
-//}
-
 GLBIshader::GLBIshader(const GLchar* vertexPath, const GLchar* fragmentPath)
 {
 	//读取文件
-
-	//glmvarInit();
-	GLMVAR_INIT
-	tranceMatSetter(identifyMat4);
-
 	char buf1[MaxShaderSize];
 	FILE* vertexShader_file;
 	errno_t err1 = 0;
@@ -93,10 +84,10 @@ void GLBIshader::use()
 }
  
 void GLBIshader::uniform_settings() 
-{	
-	glUniformMatrix4fv(glGetUniformLocation(parentID, "TransMatex"), 1, GL_FALSE, glm::value_ptr(tranceMat4Getter()));
+{
+	glUniformMatrix4fv(glGetUniformLocation(parentID, "modelcoord"), 1, GL_FALSE, glm::value_ptr(modelcoord()));
+	glUniformMatrix4fv(glGetUniformLocation(parentID, "viewcoord"), 1, GL_FALSE, glm::value_ptr(viewcoord()));
+	glUniformMatrix4fv(glGetUniformLocation(parentID, "projcoord"), 1, GL_FALSE, glm::value_ptr(projcoord()));
 	glUniform1i(glGetUniformLocation(parentID, "texture1"), 0);
 	glUniform1i(glGetUniformLocation(parentID, "texture2"), 1);
 }
-
-

@@ -10,9 +10,9 @@
 
 #define GLM_DEFINE \
 private: glm::mat4 identifyMat4;\
-public: inline glm::mat4 tranceMatGetter(){return identifyMat4;}\
+public: inline glm::mat4 tranceMat4Getter(){return identifyMat4;}\
 public: inline void tranceMatSetter(glm::mat4& temp){\
-temp = glm::translate(temp, glm::vec3(1.0f, 1.0f, 0.0f));\
+temp = glm::translate(temp, glm::vec3(0.5f, 0.5f, 0.5f));\
 temp = glm::rotate(temp, glm::radians(90.0f), glm::vec3(0.0/*x*/, 0.0/*y*/, 1.0/*z*/));\
 temp = glm::scale(temp, glm::vec3(0.5, 0.5, 0.5));}\
 //注意：这里不能直接返回identifyMat4,因为稍后传入的引用是identifyMat4的引用。
