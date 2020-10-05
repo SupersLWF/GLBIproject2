@@ -1,0 +1,3 @@
+﻿  main.cpp
+D:\SupersLWF\GLBIproject2\GLBIProject2_4\main.cpp(236): warning C4715: 'hellowindow': not all control paths return a value
+  GLBIProject2_4.vcxproj -> D:\SupersLWF\GLBIproject2\Debug\GLBIProject2_4.exe

@@ -11,7 +11,7 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-
+//stb_image库文件只是一个头文件，stb_image.h，如要使用此头文件，必须以此格式在前添加宏 STB_IMAGE_IMPLEMENTATION
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -52,19 +52,14 @@ int hellowindow(){
 		glfwTerminate();
 		return -1;
 	}
-
-
-
 	
 	glfwMakeContextCurrent(window);
-	
 
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-
 	glewExperimental = true;
 
-	
+
 	if (glewInit() != GLEW_OK)
 	{
 		std::cerr << "glewInit fail";
@@ -170,12 +165,6 @@ int hellowindow(){
 		std::cerr << "stb_texture_load_null" << std::endl;
 	}
 	stbi_image_free(data);
-
-	//glm::mat4 temp = glm::mat4(1.0f);
-
-	//temp = glm::translate(temp, glm::vec3(1.0f, 1.0f, 0.0f)); 
-	//temp = glm::rotate(temp, glm::radians(90.0f), glm::vec3(0.0/*x*/, 0.0/*y*/, 1.0/*z*/)); 
-	//temp = glm::scale(temp, glm::vec3(0.5, 0.5, 0.5)); 
 
 
 	while (!glfwWindowShouldClose(window)) {

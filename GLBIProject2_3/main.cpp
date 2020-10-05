@@ -5,7 +5,7 @@
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-//库文件只是一个头文件，stb_image.h，如要使用此头文件，必须以此格式在前添加宏 STB_IMAGE_IMPLEMENTATION
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -19,6 +19,8 @@ GLfloat vertices[] = {
 		-0.5f, -0.5f, 0.0f,   0.0f, 0.0f,   // 左下
 		-0.5f,  0.5f, 0.0f,   0.0f, 1.0f    // 左上
 };
+
+
 GLint indices[]{
 	0, 1, 2,
 	2, 3, 0
@@ -47,17 +49,11 @@ int hellowindow(){
 		return -1;
 	}
 
-
-
-	
 	glfwMakeContextCurrent(window);
 	
-
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-
 	glewExperimental = true;
-
 	
 	if (glewInit() != GLEW_OK)
 	{
@@ -152,27 +148,15 @@ int hellowindow(){
 
 	//生成纹理
 	if (data) {
-		glTexImage2D(GL_TEXTURE_2D,     //要生成的纹理使用的 纹理源文件存储的栏位
-			0, GL_RGBA,          //多级渐远纹理的级别？  生成的纹理包含的通道数
-			width, height,      //最终纹理的宽度和高度，为了兼容性，以及为低性能设备考虑，一般设置为长宽相等，或长宽比为2的级数倍
-			0, GL_RGBA, 			//忽略(始终为0)，源图的格式（通道数）
-			GL_UNSIGNED_BYTE, 	//源图的数据类型
-			data);				//源图数据（指针）
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);				
 
-		glGenerateMipmap(GL_TEXTURE_2D);//为该栏位的纹理创建全部级别的多级渐远纹理。
-		//或者反复调用上面的glTexImage2D也可以手动创建每一级渐远纹理，
-		//只要调整第二个参数就可以生成不同级别的多级渐远纹理
-		//基本级别“0”就是不创建多级渐远纹理,仅使用原始贴图
+		glGenerateMipmap(GL_TEXTURE_2D);
 
 
-	}else{//如果加载成功，则data内至少是有值的。
+	}else{
 		std::cerr << "stb_texture_load_null" << std::endl;
 	}
 	stbi_image_free(data);
-	//OpenGL根据源图生成纹理后，源图就不需要了。
-
-
-	
 
 
 	while (!glfwWindowShouldClose(window)) {
@@ -205,4 +189,14 @@ void processInput(GLFWwindow* window) {
 	{
 		glfwSetWindowShouldClose(window, true);
 	}
+	//if (glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS)
+	//{
+	//}
+	//if (glfwGetKey(window, GLFW_KEY_BACKSPACE) == GLFW_PRESS)
+	//{
+	//	glDisable(GL_BLEND);
+	//	glDisable(GL_POINT_SMOOTH);
+	//	glDisable(GL_LINE_SMOOTH);
+	//	glDisable(GL_POLYGON_SMOOTH);
+	//}
 }; 

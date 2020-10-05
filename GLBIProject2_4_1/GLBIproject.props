@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_PropertySheetDisplayName>GLBIproject2</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\SupersLWF\GLBIproject2\packages\glm.0.9.9.800\build\native\include\glm;D:\SupersLWF\GLBIproject2\packages\glfw.3.3.2\build\native\include\GLFW;D:\SupersLWF\GLBIproject2\packages\glew.1.9.0.1\build\native\include\GL;D:\SupersLWF\GLBIproject2\stb_image;D:\SupersLWF\GLBIproject2\CustomglCls;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>D:\SupersLWF\GLBIproject2\packages\glfw.3.3.2\build\native\lib\dynamic\v100\win32;D:\SupersLWF\GLBIproject2\packages\glew.1.9.0.1\build\native\lib\v100\Win32\Debug\dynamic;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Link>
+      <AdditionalDependencies>opengl32.lib;glew.lib;glfw3dll.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

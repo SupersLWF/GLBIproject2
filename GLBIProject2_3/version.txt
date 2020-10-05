@@ -1,4 +1,6 @@
 继承GLBIProject2_2
+去除了顶点坐标中的颜色信息
+对应更改了VAO的数据挖掘方式
 
 继承shader源文件
 删除了TransMartex，

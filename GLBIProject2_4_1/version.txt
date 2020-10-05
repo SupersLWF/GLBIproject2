@@ -1,0 +1,12 @@
+继承GLBIProject2_3
+
+增加了更多顶点，这些顶点也全部参与 model变换和 OpenGL三维坐标变换
+开启了纵深图层功能
+开启了纵深图层刷新功能
+
+新增GLBIMat4transform，分离GLBIshader中，之前用以变换四维向量的功能到这个类
+加入独立的modelScale,modelRotate,modelTranslate功能。
+
+注意：modelScale会直接修改model变换矩阵，如果此model变换矩阵在上一次变换参与过位移变换，那么modelScale可能会对上一次的位移变换产生负面影响
+
+

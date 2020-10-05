@@ -1,5 +1,3 @@
-﻿  GLBIshader.cpp
-  main.cpp
-  Generating Code...
-D:\SupersLWF\GLBIproject2\GLBIProject2_3\main.cpp(196): warning C4715: 'hellowindow': not all control paths return a value
+﻿  main.cpp
+D:\SupersLWF\GLBIproject2\GLBIProject2_3\main.cpp(189): warning C4715: 'hellowindow': not all control paths return a value
   GLBIProject2_3.vcxproj -> D:\SupersLWF\GLBIproject2\Debug\GLBIProject2_3.exe

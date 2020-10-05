@@ -14,14 +14,3 @@ void main(){
 //FragColor = texture(texture1, uv) * vec4(Color.x,Color.y,Color.z,1.0);
 	FragColor = mix(texture(texture1, uv),texture(texture2, uv), 0.2);
 }
-
-
-
-//使用这种方式可以进行混合插值，每个点的最终颜色，就是该四元组每项依次相乘，得到的是四元组，而不是向量的乘积。
-//FragColor最终一定是4元组，因此在混合插值时，注意使用四元组。
-
-//这个函数是用来加载纹理给FragColor的。
-//其中，ourTexture是从外部cpu代码传入的uniform变量，uv就是从vertax_shader传入的uv坐标。
-
-//sampler2D是一个特殊的变量标记，如果只是一张纹理的话，OpenGL会自动使用GL_TEXTURE_2D的0号槽位 来初始化texture1。
-//而如果有多张纹理，那么你需要为每张纹理指定它自己的槽位

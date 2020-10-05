@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="shader">
+      <UniqueIdentifier>{83e21d65-1216-42fc-b0ba-58280128caac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="texture">
+      <UniqueIdentifier>{7f2f7546-17c5-4565-b3ac-ac0af29ee648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CustomCls">
+      <UniqueIdentifier>{22c1b57e-b7a4-47cd-89e2-94f64fcd28c6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="GLBIshader.h">
+      <Filter>CustomCls</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBITexture.h">
+      <Filter>CustomCls</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBIMat4transform.h">
+      <Filter>CustomCls</Filter>
+    </ClInclude>
+    <ClInclude Include="SLCTimer.h">
+      <Filter>CustomCls</Filter>
+    </ClInclude>
+    <ClInclude Include="unistd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="GLBIshader.cpp">
+      <Filter>CustomCls</Filter>
+    </ClCompile>
+    <ClCompile Include="GLBITexture.cpp">
+      <Filter>CustomCls</Filter>
+    </ClCompile>
+    <ClCompile Include="GLBIMat4transform.cpp">
+      <Filter>CustomCls</Filter>
+    </ClCompile>
+    <ClCompile Include="SLCTimer.cpp">
+      <Filter>CustomCls</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="version.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\OpenGLPersetFragmentShader(simple).gls">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="shader\OpenGLPersetVertexShader(simple).gls">
+      <Filter>shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="texture\Angel.jpg">
+      <Filter>texture</Filter>
+    </Image>
+    <Image Include="texture\Angel.png">
+      <Filter>texture</Filter>
+    </Image>
+    <Image Include="texture\container.jpg">
+      <Filter>texture</Filter>
+    </Image>
+    <Image Include="texture\lalala.png">
+      <Filter>texture</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

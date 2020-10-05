@@ -18,6 +18,11 @@ temp = glm::scale(temp, glm::vec3(0.5, 0.5, 0.5));}\
 //注意：这里不能直接返回identifyMat4,因为稍后传入的引用是identifyMat4的引用。
 //先缩放，再旋转，最后位移，但写的时候应该正好是反的，矩阵连乘的时候假定向量在最右边，也应该是从右向左乘，位移变换矩阵也还是在最左边
 
+//translate是平移变换
+//rotate是旋转变换，此处是绕z轴旋转
+//scale是缩放变换，此处是x,y,z坐标均缩放0.5倍
+
+//tranceMatSetter最终会将identifyMat4转换三个变换矩阵相乘的形式：translate*rotate*scale
 
 #define GLMVAR_INIT identifyMat4 = glm::mat4(1.0f);
 
