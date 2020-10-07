@@ -17,6 +17,10 @@ private:
 	GLfloat SpinAngle;
 	GLuint shaderID;
 	void modelTransf(glm::mat4* TransfMat4);
+
+	/*.....此处用于指定.....*/
+		
+	/*..........*/
 public:
 
 	void setSpinAngle(const GLfloat&);
@@ -26,6 +30,11 @@ public:
 
 	void modelScale();
 	void modelRotate();
+	void modelRotate(GLfloat spinAngle, GLfloat x, GLfloat y, GLfloat z);
+	//此函数用于后期改变某一VAO模型的modelCrood，
+	//一般在单VAO绘制多图形时使用，以更改默认值，选择自定义的绘制方式
+
+
 	void modelTranslate();
 
 
@@ -36,7 +45,7 @@ public:
 	//inline glm::mat4 modelcoord() { return modeltrance(translationMat4(), rotationMat4(), scaleMat4()); };
 	inline glm::mat4 viewcoord() { return glm::translate(glm::mat4(1.0f), glm::vec3(0.0f, 0.0f, -3.0f)); };
 	inline glm::mat4 projcoord() { return glm::perspective(glm::radians(45.0f), (GLfloat)(1000 / 700), 1.0f, 100.0f); };
-  
+   
 public:
 	GLBIMat4transform();
 	GLBIMat4transform(GLuint* ShaderID);

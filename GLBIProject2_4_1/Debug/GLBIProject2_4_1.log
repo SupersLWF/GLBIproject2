@@ -1,2 +1,5 @@
-﻿  GLBIMat4transform.cpp
+﻿  main.cpp
+D:\SupersLWF\GLBIproject2\GLBIProject2_4_1\main.cpp(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\SupersLWF\GLBIproject2\GLBIProject2_4_1\GLBIshader.h(1,1): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+D:\SupersLWF\GLBIproject2\GLBIProject2_4_1\main.cpp(248): warning C4715: 'hellowindow': not all control paths return a value
   GLBIProject2_4_1.vcxproj -> D:\SupersLWF\GLBIproject2\Debug\GLBIProject2_4_1.exe

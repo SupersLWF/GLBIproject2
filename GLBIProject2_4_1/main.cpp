@@ -66,6 +66,21 @@ float vertices[] = {//为防止纹理颠倒，要对纹理坐标进行运算。
 	-0.5f,  0.5f, -0.5f,  0.0f, 1-1.0f
 };
 
+glm::vec3 TranslationVertex[]
+{
+	glm::vec3(0.0f,  0.0f,  0.0f),
+	glm::vec3(2.0f,  5.0f, -15.0f),
+	glm::vec3(-1.5f, -2.2f, -2.5f),
+	glm::vec3(-3.8f, -2.0f, -12.3f),
+	glm::vec3(2.4f, -0.4f, -3.5f),
+	glm::vec3(-1.7f,  3.0f, -7.5f),
+	glm::vec3(1.3f, -2.0f, -2.5f),
+	glm::vec3(1.5f,  2.0f, -2.5f),
+	glm::vec3(1.5f,  0.2f, -1.5f),
+	glm::vec3(-1.3f,  1.0f, -1.5f)
+};
+
+
 //包含深度信息，以OpenGL标准坐标系形式给出顶点，texture根据顶点坐标以及映射在顶点坐标中的uv坐标贴在空间
 //OpenGL是一个3D绘图api
 
@@ -126,12 +141,6 @@ int hellowindow(){
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);	
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-
-	GLuint EBO;
-	glGenBuffers(1, &EBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
 
 	//从当前绑定的VBO挖掘数据
@@ -216,16 +225,21 @@ int hellowindow(){
 		glClearColor(0, 0, 0, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT/*刷新纵深图层*/);
 
-		shader.use();
-		shader.uniform_settings();
-		transform.uniform_settings();
-		transform.modelRotate();
-		transform.uniform_settings();
+
+
 
 		glBindVertexArray(VAO);
 
+		
+		shader.use();
+		shader.uniform_settings();
+
+		transform.modelRotate(0.1f,1.0f,1.0f,1.0f);
+		transform.uniform_settings();
+
 		glDrawArrays(GL_TRIANGLES, 0, 36);
-		//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0); 
+
+
 
 		glfwPollEvents();
 		glfwSwapBuffers(window);
@@ -243,5 +257,4 @@ void processInput(GLFWwindow* window) {
 	{
 		glfwSetWindowShouldClose(window, true);
 	}
-
 }; 

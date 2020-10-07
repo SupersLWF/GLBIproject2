@@ -33,8 +33,13 @@ void GLBIMat4transform::modelRotate()
 	*modelTransfMat4 = glm::rotate(*modelTransfMat4, glm::radians(SpinAngle), glm::vec3(1.0f, 1.0f, 1.0f));
 }
 
+void GLBIMat4transform::modelRotate(GLfloat spinAngle, GLfloat x, GLfloat y, GLfloat z)
+{
+	*modelTransfMat4 = glm::rotate(*modelTransfMat4, glm::radians(spinAngle), glm::vec3(x, y, z));
+}
 void GLBIMat4transform::modelTranslate()
 {
+
 }
 
 GLBIMat4transform::GLBIMat4transform()
